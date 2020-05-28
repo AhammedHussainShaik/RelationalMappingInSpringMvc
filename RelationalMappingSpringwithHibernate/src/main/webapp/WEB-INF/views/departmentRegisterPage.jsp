@@ -19,7 +19,7 @@
 					<div class="row" style="padding: 10px;">
 						<div class="col-4">Department Name:</div>
 						<div class="col-4">
-							<form:input path="empName" class="form-control" />
+							<form:input path="deptName" class="form-control" />
 						</div>
 					</div>
 					<div class="row" style="padding: 10px;">

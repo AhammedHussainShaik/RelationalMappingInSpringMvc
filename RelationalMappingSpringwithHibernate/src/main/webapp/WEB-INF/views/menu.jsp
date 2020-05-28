@@ -17,7 +17,7 @@
           <a class="dropdown-item" href="deptRegister">Register Department</a>
           <a class="dropdown-item" href="#">Edit Department</a>
           <a class="dropdown-item" href="#">Delete Department</a>
-          <a class="dropdown-item" href="showAllDept">Show All Department</a>
+          <a class="dropdown-item" href="department/showAllDept">Show All Department</a>
         </div>
       </li>
       <li class="nav-item dropdown">

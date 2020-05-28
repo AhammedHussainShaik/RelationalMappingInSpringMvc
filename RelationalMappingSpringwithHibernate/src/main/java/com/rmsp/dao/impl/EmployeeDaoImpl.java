@@ -15,6 +15,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.orm.hibernate5.HibernateCallback;
 import org.springframework.orm.hibernate5.HibernateTemplate;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.rmsp.dao.IEmployeeDao;
 import com.rmsp.models.Employee;
@@ -24,12 +25,14 @@ public class EmployeeDaoImpl implements IEmployeeDao {
 	HibernateTemplate hibernateTemplate;
 
 	@Override
+	@Transactional
 	public Integer saveEmployee(Employee employee) {
 		// TODO Auto-generated method stub
 		return (Integer) hibernateTemplate.save(employee);
 	}
 
 	@Override
+	@Transactional(readOnly = true)
 	public List<Employee> getAllDeptConectedEmployees() {
 		List<Employee> employees=hibernateTemplate.execute(new HibernateCallback<List<Employee>>() {
 			@SuppressWarnings("unused")

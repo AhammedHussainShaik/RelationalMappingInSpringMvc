@@ -38,8 +38,11 @@ public class ApplicationDbConfig {
 		LocalSessionFactoryBean sessionFactoryBean=new LocalSessionFactoryBean();
 		
 		sessionFactoryBean.setDataSource(dataSource());
-		sessionFactoryBean.setAnnotatedClasses(Employee.class);
-		sessionFactoryBean.setAnnotatedClasses(Department.class);
+		/*
+		 * sessionFactoryBean.setAnnotatedClasses(Employee.class);
+		 * sessionFactoryBean.setAnnotatedClasses(Department.class);
+		 */
+		sessionFactoryBean.setPackagesToScan("com.rmsp.models");
 		sessionFactoryBean.setHibernateProperties(getProperties());
 		
 		return sessionFactoryBean;
@@ -64,7 +67,7 @@ public class ApplicationDbConfig {
 		properties.put("hibernate.dialect", environment.getProperty("orm.dialect"));
 		properties.put("hibernate.show_sql",environment.getProperty("orm.showsql"));
 		properties.put("hibernate.format_sql", environment.getProperty("orm.fmtsql"));
-		properties.put("hibernate.hbm2ddl.aut", environment.getProperty("orm.ddlauto"));
+		properties.put("hibernate.hbm2ddl.auto", environment.getProperty("orm.ddlauto"));
 		return properties;
 	}
 
